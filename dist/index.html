@@ -3,58 +3,141 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#1b1b1b">
-  <meta name="description" content="Théo Jeanmart — robotics and AI engineering student working on mobile robotics, 3D perception and autonomous navigation.">
+  <meta name="theme-color" content="#2d383e">
+  <meta name="description" content="Théo Jeanmart — robotics and AI engineering student working on perception, planning and mobile robotics.">
   <title>Théo Jeanmart — Robotics & AI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%231b1b1b'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='29' font-weight='bold' text-anchor='middle' fill='white'%3ETJ%3C/text%3E%3C/svg%3E">
-  <style>
-    :root{color-scheme:dark;--bg:#1b1b1b;--surface:#282828;--text:#f5f5f5;--muted:#aaa;--line:#515151;--font:'IBM Plex Mono','Courier New',monospace}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}a{color:inherit}a:focus-visible{outline:2px solid #fff;outline-offset:6px}::selection{background:#fff;color:#1b1b1b}.container{width:min(1060px,calc(100% - 56px));margin-inline:auto}
-    .hero{min-height:86vh;min-height:86svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:100px 0 130px}.hero-prefix{color:var(--muted);font-size:clamp(18px,2.1vw,27px);margin:0 0 2px}.hero h1{font-size:clamp(62px,8vw,108px);line-height:1.15;letter-spacing:-.075em;margin:0;font-weight:700}.hero-intro{font-size:clamp(16px,1.75vw,21px);line-height:1.7;color:#d4d4d4;max-width:760px;margin:42px 0 0}.hero-meta{font-size:13px;color:var(--muted);margin:34px 0 0}
-    .section{padding:70px 0 100px}.command{font-size:clamp(30px,4vw,52px);line-height:1.28;letter-spacing:-.055em;font-weight:700;margin:0 0 78px}.command.center{text-align:center}.career-list{max-width:930px;margin:auto}.career-item{border-left:2px solid var(--line);padding:3px 0 0 42px;margin-bottom:64px}.career-item:last-child{margin-bottom:0}.career-item:first-child{border-color:var(--text)}.career-date{font-size:15px;color:var(--muted);margin:0 0 14px}.career-item h3{font-size:clamp(22px,2.6vw,31px);line-height:1.35;letter-spacing:-.035em;margin:0 0 7px}.career-org{font-size:18px;margin:0 0 13px}.career-place{color:var(--muted);font-size:14px;margin:0 0 22px}.career-description{color:#cacaca;margin:0 0 16px;max-width:790px}.terminal-list{list-style:none;padding:0;margin:0;color:#bcbcbc}.terminal-list li{margin:2px 0}
-    .skills{padding-top:100px;padding-bottom:125px}.skills .command{margin-bottom:44px}.skill-list{display:flex;flex-wrap:wrap;gap:14px}.skill{display:inline-flex;align-items:center;gap:13px;background:var(--surface);border-radius:10px;padding:11px 18px;min-height:58px;font-size:16px;white-space:nowrap}.skill-mark{font-size:19px;font-weight:700;color:#fff;line-height:1}
-    .projects{padding-top:75px}.projects .command{margin-bottom:32px}.project{padding:28px 0;border-top:1px solid #3f3f3f;display:grid;grid-template-columns:1fr 160px;gap:24px}.project:last-child{border-bottom:1px solid #3f3f3f}.project h3{font-size:20px;margin:0 0 5px;letter-spacing:-.025em}.project p{color:var(--muted);margin:0;font-size:14px;max-width:710px}.project time{color:var(--muted);font-size:13px;text-align:right;padding-top:5px}
-    .footer{padding:150px 0 62px;text-align:center}.footer-note{color:var(--muted);font-size:15px;margin:0 0 32px}.socials{display:flex;align-items:center;justify-content:center;gap:54px}.social{display:inline-flex;width:47px;height:47px;align-items:center;justify-content:center;color:var(--text);transition:opacity .18s,transform .18s}.social svg{width:42px;height:42px;fill:currentColor}.social:hover{opacity:.7;transform:translateY(-2px)}.social-inactive{opacity:.45;cursor:default}.social-inactive:hover{opacity:.45;transform:none}.copyright{font-size:11px;color:#777;margin:58px 0 0}
-    @media(max-width:700px){.container{width:calc(100% - 40px)}.hero{min-height:73svh;padding:90px 0}.hero h1{font-size:clamp(57px,13vw,80px)}.hero-intro{margin-top:29px}.hero-meta{font-size:12px}.section{padding:45px 0 70px}.command{margin-bottom:50px}.career-item{padding-left:23px;margin-bottom:48px}.career-date{font-size:13px}.career-org{font-size:16px}.career-place{font-size:13px}.skills{padding-top:60px;padding-bottom:85px}.skill-list{gap:10px}.skill{font-size:14px;min-height:48px;padding:9px 13px;border-radius:7px}.skill-mark{font-size:16px}.projects{padding-top:50px}.project{grid-template-columns:1fr;gap:5px}.project time{text-align:left;grid-row:1}.footer{padding:105px 0 50px}.socials{gap:34px}.social,.social svg{width:39px;height:39px}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.social{transition:none}}
-  </style>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%232d383e'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='29' font-weight='bold' text-anchor='middle' fill='white'%3ETJ%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <main>
-    <header class="hero container">
-      <p class="hero-prefix">Hello, I'm</p>
+  <header class="hero" id="top">
+    <div class="hero-copy">
+      <p class="hero-lead">Hello, I'm</p>
       <h1>Théo Jeanmart</h1>
-      <p class="hero-intro">Robotics & AI engineering student working on mobile robots, 3D perception and autonomous navigation.</p>
-      <p class="hero-meta">Toulouse, France · Open to a six-month internship from March 2027</p>
-    </header>
+      <p>Robotics & AI engineering student working on mobile robots, 3D perception and autonomous navigation.</p>
+    </div>
+    <span class="hero-index" aria-hidden="true">01 — 04</span>
+  </header>
 
-    <section class="section container" aria-labelledby="career-title">
-      <h2 class="command center" id="career-title">&gt; cat career.txt</h2>
-      <div class="career-list">
-        <article class="career-item"><p class="career-date">&gt; Apr 2026 – Aug 2026</p><h3>Robotics Software Intern</h3><p class="career-org">@ Örebro University — AASS</p><p class="career-place">Örebro, Sweden</p><p class="career-description">3D perception and localization research, building a modular ROS2 framework for LiDAR and radar point-cloud registration.</p><ul class="terminal-list"><li>$ ROS1 to ROS2 migration</li><li>$ 6-DoF point-cloud registration</li><li>$ Evaluation and visualization tools</li></ul></article>
-        <article class="career-item"><p class="career-date">&gt; 2025 – Present</p><h3>Path Planning Developer & Scrum Master</h3><p class="career-org">@ TLSe Racing — Formula Student</p><p class="career-place">Toulouse, France</p><p class="career-description">Developing drivable trajectories for an autonomous race car from perceived track and cone data.</p><ul class="terminal-list"><li>$ Autonomous path planning</li><li>$ Perception-to-control integration</li></ul></article>
-        <article class="career-item"><p class="career-date">&gt; 2024 – 2027</p><h3>Engineering Degree in Robotics & AI</h3><p class="career-org">@ UPSSITECH, University of Toulouse</p><p class="career-place">Toulouse, France</p><p class="career-description">Robotics, computer science and artificial intelligence.</p></article>
-      </div>
-    </section>
+  <div class="stage" id="stage">
+    <div class="margin-art" aria-hidden="true">
+      <div class="side-figure side-figure--left side-figure--cloud" data-anchor="experience" data-offset="260" data-motion="cloud"><img src="assets/point-cloud.png" alt="" loading="lazy"></div>
+      <div class="side-figure side-figure--right side-figure--arm" data-anchor="experience" data-offset="720" data-motion="arm"><img src="assets/robotic-arm.png" alt="" loading="lazy"></div>
+      <div class="side-figure side-figure--left side-figure--formula" data-anchor="projects" data-offset="80" data-motion="formula"><div class="car-assembly"><img class="car-body" src="assets/formula-car.png" alt="" loading="lazy"><img class="car-wheel car-wheel--rear" src="assets/formula-wheel.png" alt="" loading="lazy"><img class="car-wheel car-wheel--front" src="assets/formula-wheel.png" alt="" loading="lazy"></div></div>
+      <div class="side-figure side-figure--right side-figure--drone" data-anchor="projects" data-offset="530" data-motion="drone"><img src="assets/drone.png" alt="" loading="lazy"></div>
+    </div>
 
-    <section class="section skills container" aria-labelledby="skills-title">
-      <h2 class="command" id="skills-title">&gt; ls ./skills</h2>
-      <div class="skill-list" aria-label="Technical skills">
-        <span class="skill"><span class="skill-mark" aria-hidden="true">&lt;/&gt;</span> ROS2</span>
-        <span class="skill"><span class="skill-mark" aria-hidden="true">C+</span> C++</span>
-        <span class="skill"><span class="skill-mark" aria-hidden="true">Py</span> Python</span>
-        <span class="skill"><span class="skill-mark" aria-hidden="true">◎</span> Mobile Robotics</span>
-        <span class="skill"><span class="skill-mark" aria-hidden="true">◈</span> 3D Perception</span>
-        <span class="skill"><span class="skill-mark" aria-hidden="true">⌁</span> Path Planning</span>
-        <span class="skill"><span class="skill-mark" aria-hidden="true">#</span> Linux & Git</span>
-      </div>
-    </section>
+    <main class="content">
+      <section class="section experience" id="experience" aria-labelledby="experience-title">
+        <h2 class="section-title section-title--center" id="experience-title"><span aria-hidden="true">&gt;</span> Experience</h2>
+        <div class="experience-list">
+          <article class="experience-item" tabindex="0">
+            <p class="eyebrow">Apr 2026 — Aug 2026</p>
+            <h3>Robotics Software Intern</h3>
+            <p class="organisation">@ Örebro University · AASS</p>
+            <p class="location">Örebro, Sweden</p>
+            <p>Modernised a 3D point-cloud registration framework in ROS2, with LiDAR and radar matching, evaluation tools and RViz2 visualisation.</p>
+            <ul class="prompt-list"><li>ROS2 & modern C++</li><li>6-DoF point-cloud registration</li><li>Research tooling</li></ul>
+          </article>
+          <article class="experience-item" tabindex="0">
+            <p class="eyebrow">2025 — Present</p>
+            <h3>Path Planning Developer & Scrum Master</h3>
+            <p class="organisation">@ TLSe Racing · Formula Student</p>
+            <p class="location">Toulouse, France</p>
+            <p>Developing the planning pipeline that turns perceived track and cone data into a drivable trajectory for an autonomous race car.</p>
+            <ul class="prompt-list"><li>Path planning</li><li>Autonomy integration</li><li>Simulation and testing</li></ul>
+          </article>
+          <article class="experience-item" tabindex="0">
+            <p class="eyebrow">2024 — 2027</p>
+            <h3>Engineering Degree in Robotics & AI</h3>
+            <p class="organisation">@ UPSSITECH · University of Toulouse</p>
+            <p>Robotics, computer science and artificial intelligence.</p>
+          </article>
+        </div>
+      </section>
 
-    <section class="section projects container" aria-labelledby="projects-title"><h2 class="command" id="projects-title">&gt; ls ./projects</h2><article class="project"><div><h3>Industry 4.0 robotic integration</h3><p>Connecting collaborative robots, conveyors and a TIAGo mobile robot in a shared production demonstrator.</p></div><time>2026 – Present</time></article><article class="project"><div><h3>Autonomous mobile platform</h3><p>Building and testing a mobile robot from its mechanical and electronic parts through to autonomous navigation.</p></div><time>2024 – 2025</time></article></section>
-  </main>
-  <footer class="footer container"><div class="socials" aria-label="Social links"><span class="social social-inactive" role="img" aria-label="GitHub profile link coming soon" title="GitHub profile link coming soon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297C5.37.297 0 5.67 0 12.297c0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.016-2.04-3.338.726-4.043-1.61-4.043-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.238 1.84 1.238 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.304-5.466-1.333-5.466-5.93 0-1.31.467-2.38 1.235-3.22-.124-.303-.536-1.524.117-3.176 0 0 1.008-.323 3.301 1.23a11.517 11.517 0 0 1 3.003-.404c1.02.005 2.047.138 3.003.404 2.29-1.553 3.296-1.23 3.296-1.23.655 1.652.243 2.873.12 3.176.77.84 1.233 1.91 1.233 3.22 0 4.61-2.805 5.624-5.476 5.922.43.372.823 1.102.823 2.222 0 1.606-.015 2.898-.015 3.293 0 .32.217.694.825.576C20.565 22.092 24 17.596 24 12.297 24 5.67 18.627.297 12 .297z"/></svg></span><a class="social" href="https://www.linkedin.com/in/theo-jeanmart-433717214" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 2H3.55C2.7 2 2 2.67 2 3.5v17c0 .83.7 1.5 1.55 1.5h16.9c.86 0 1.55-.67 1.55-1.5v-17c0-.83-.69-1.5-1.55-1.5ZM7.93 18.75H4.98V9.2h2.95v9.55ZM6.45 7.9a1.71 1.71 0 1 1 0-3.42 1.71 1.71 0 0 1 0 3.42Zm12.3 10.85H15.8V14.1c0-1.11-.02-2.54-1.55-2.54-1.55 0-1.79 1.21-1.79 2.46v4.73H9.5V9.2h2.84v1.3h.04c.4-.75 1.36-1.55 2.8-1.55 2.99 0 3.56 1.97 3.56 4.53v5.27Z"/></svg></a><a class="social" href="mailto:theo.jeanmart@gmail.com" aria-label="Send an email"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5.5A2.5 2.5 0 0 1 4.5 3h15A2.5 2.5 0 0 1 22 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 18.5v-13Zm2.1-.3 7.18 6.1a1.1 1.1 0 0 0 1.44 0l7.18-6.1H4.1Zm15.7 3-5.78 4.9a3.1 3.1 0 0 1-4.04 0L4.2 8.2v10.3c0 .17.13.3.3.3h15c.17 0 .3-.13.3-.3V8.2Z"/></svg></a></div><p class="copyright">© 2026 Théo Jeanmart</p></footer>
+      <section class="section skills" id="skills" aria-labelledby="skills-title">
+        <h2 class="section-title" id="skills-title"><span aria-hidden="true">&gt;</span> Skills</h2>
+        <div class="skill-groups">
+          <div class="skill-blob skill-blob--simulation"><h3>Simulation</h3><p>Gazebo <span>·</span> RViz2 <span>·</span> MoveIt 2</p></div>
+          <div class="skill-blob skill-blob--computing"><h3>Computing</h3><p>Python <span>·</span> C++ <span>·</span> C <span>·</span> Linux/Unix <span>·</span> Git</p></div>
+          <div class="skill-blob skill-blob--robotics"><h3>Robotics</h3><p>ROS2 <span>·</span> Localization <span>·</span> Point-cloud registration <span>·</span> Path planning</p></div>
+          <div class="skill-blob skill-blob--libraries"><h3>Libraries</h3><p>PCL <span>·</span> Eigen <span>·</span> Ceres Solver</p></div>
+        </div>
+      </section>
+
+      <section class="section projects" id="projects" aria-labelledby="projects-title">
+        <h2 class="section-title" id="projects-title"><span aria-hidden="true">&gt;</span> Projects</h2>
+        <p class="section-note">Select a project to see the approach and system architecture.</p>
+        <div class="project-list">
+          <details class="project">
+            <summary><span class="project-name">3D perception & localization</span><span class="project-meta">ROS2 · 2026</span><span class="project-toggle" aria-hidden="true">+</span></summary>
+            <div class="project-report">
+              <p class="report-kicker">Research internship · Örebro University</p>
+              <h3>From legacy registration to a reusable ROS2 stack</h3>
+              <p>The work began with a legacy NDT registration system. I separated the core matching algorithms, ROS interfaces and evaluation code into reusable parts, then extended registration to full six-degree-of-freedom LiDAR and radar alignment.</p>
+              <p>Point-to-distribution and distribution-to-distribution matching were evaluated with gradient, Newton and Ceres-based optimisation, including multi-resolution processing. PointCloud2 input, rosbag replay and RViz2 visualisation made experiments easier to inspect and reproduce.</p>
+              <p class="diagram-label">Conceptual architecture</p><div class="diagram" role="img" aria-label="Conceptual architecture: LiDAR or radar PointCloud2 data flows into registration, then optimization, then pose estimation and evaluation."><span>LiDAR / radar<br>PointCloud2</span><i aria-hidden="true">→</i><span>P2D / D2D<br>registration</span><i aria-hidden="true">→</i><span>Optimisation<br>+ pose</span><i aria-hidden="true">→</i><span>RViz2 /<br>evaluation</span></div>
+            </div>
+          </details>
+          <details class="project">
+            <summary><span class="project-name">Formula Student path planning</span><span class="project-meta">TLSe Racing · 2025–</span><span class="project-toggle" aria-hidden="true">+</span></summary>
+            <div class="project-report">
+              <p class="report-kicker">Autonomous racing</p>
+              <h3>Turning the perceived track into a trajectory</h3>
+              <p>The driverless vehicle needs a path it can actually follow. My workstream uses the track and cone information delivered by perception to construct a drivable trajectory and connects that result to the wider autonomy stack.</p>
+              <p>As Scrum Master for the planning workstream, I also coordinated priorities and integration with perception and vehicle-control components. The team iterates through simulation and system-level tests to check the behaviour of the complete chain.</p>
+              <p class="diagram-label">Conceptual architecture</p><div class="diagram" role="img" aria-label="Conceptual architecture: cone detections produce a track model, which feeds path planning and then vehicle control."><span>Cone<br>detections</span><i aria-hidden="true">→</i><span>Track<br>model</span><i aria-hidden="true">→</i><span>Path<br>planner</span><i aria-hidden="true">→</i><span>Vehicle<br>control</span></div>
+            </div>
+          </details>
+          <details class="project">
+            <summary><span class="project-name">Industry 4.0 robotic integration</span><span class="project-meta">UPSSITECH · 2026–</span><span class="project-toggle" aria-hidden="true">+</span></summary>
+            <div class="project-report">
+              <p class="report-kicker">Final-year engineering project</p>
+              <h3>One demonstrator, several kinds of robot</h3>
+              <p>This proof of concept brings collaborative and mobile robots into a connected production environment. The team is defining the system architecture and coordinating two Yaskawa collaborative robots, two conveyors and a PAL Robotics TIAGo mobile robot.</p>
+              <p>The central challenge is making heterogeneous equipment operate as one demonstrator. The work spans interfaces between machines, task coordination and validation of the end-to-end manufacturing sequence.</p>
+              <p class="diagram-label">Conceptual architecture</p><div class="diagram" role="img" aria-label="Conceptual architecture: a coordination layer connects two Yaskawa collaborative robots, conveyors and a TIAGo mobile robot."><span>Task<br>coordination</span><i aria-hidden="true">→</i><span>2 Yaskawa<br>cobots</span><span>2<br>conveyors</span><span>TIAGo<br>mobile robot</span></div>
+            </div>
+          </details>
+          <details class="project">
+            <summary><span class="project-name">Autonomous mobile platform</span><span class="project-meta">Academic project · 2024–25</span><span class="project-toggle" aria-hidden="true">+</span></summary>
+            <div class="project-report">
+              <p class="report-kicker">From components to a working robot</p>
+              <h3>Building the complete hardware and software chain</h3>
+              <p>The platform was designed and assembled from mechanical, electronic and software components. I worked on C++ and Python control software linking sensing, actuation and higher-level autonomous motion.</p>
+              <p>Rather than treating each subsystem in isolation, the team tested the physical robot repeatedly and adjusted the integration until it could navigate autonomously as a complete system.</p>
+              <p class="diagram-label">Conceptual architecture</p><div class="diagram" role="img" aria-label="Conceptual architecture: sensors feed robot state, navigation produces motion commands, and motor control drives the platform."><span>Sensors</span><i aria-hidden="true">→</i><span>Robot<br>state</span><i aria-hidden="true">→</i><span>Navigation</span><i aria-hidden="true">→</i><span>Motor<br>control</span></div>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section class="section interests" id="interests" aria-labelledby="interests-title">
+        <h2 class="section-title" id="interests-title"><span aria-hidden="true">&gt;</span> Interests</h2>
+        <div class="interest-grid">
+          <details class="interest" data-follow="0.7"><summary><img src="assets/sailing.png" alt="" loading="lazy"><span>Sailing</span></summary><p>Short note to come.</p></details>
+          <details class="interest" data-follow="1"><summary><img src="assets/rubiks-cube.png" alt="" loading="lazy"><span>Rubik's Cube</span></summary><p>Short note to come.</p></details>
+          <details class="interest" data-follow="0.8"><summary><img src="assets/gt3-car.png" alt="" loading="lazy"><span>Motorsport</span></summary><p>Short note to come.</p></details>
+          <details class="interest" data-follow="1.1"><summary><img src="assets/judo-gi.png" alt="" loading="lazy"><span>Judo</span></summary><p>Ten years on the mat. Brown belt.</p></details>
+          <details class="interest" data-follow="0.9"><summary><img src="assets/motorcycle.png" alt="" loading="lazy"><span>Motorcycles</span></summary><p>Short note to come.</p></details>
+          <details class="interest" data-follow="1.2"><summary><img src="assets/table-tennis.png" alt="" loading="lazy"><span>Table tennis</span></summary><p>Short note to come.</p></details>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div class="socials" aria-label="Social links">
+      <span class="social social-inactive" role="img" aria-label="GitHub profile link coming soon" title="GitHub profile link coming soon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297C5.37.297 0 5.67 0 12.297c0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.016-2.04-3.338.726-4.043-1.61-4.043-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.238 1.84 1.238 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.304-5.466-1.333-5.466-5.93 0-1.31.467-2.38 1.235-3.22-.124-.303-.536-1.524.117-3.176 0 0 1.008-.323 3.301 1.23a11.517 11.517 0 0 1 3.003-.404c1.02.005 2.047.138 3.003.404 2.29-1.553 3.296-1.23 3.296-1.23.655 1.652.243 2.873.12 3.176.77.84 1.233 1.91 1.233 3.22 0 4.61-2.805 5.624-5.476 5.922.43.372.823 1.102.823 2.222 0 1.606-.015 2.898-.015 3.293 0 .32.217.694.825.576C20.565 22.092 24 17.596 24 12.297 24 5.67 18.627.297 12 .297z"/></svg></span>
+      <a class="social" href="https://www.linkedin.com/in/theo-jeanmart-433717214" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 2H3.55C2.7 2 2 2.67 2 3.5v17c0 .83.7 1.5 1.55 1.5h16.9c.86 0 1.55-.67 1.55-1.5v-17c0-.83-.69-1.5-1.55-1.5ZM7.93 18.75H4.98V9.2h2.95v9.55ZM6.45 7.9a1.71 1.71 0 1 1 0-3.42 1.71 1.71 0 0 1 0 3.42Zm12.3 10.85H15.8V14.1c0-1.11-.02-2.54-1.55-2.54-1.55 0-1.79 1.21-1.79 2.46v4.73H9.5V9.2h2.84v1.3h.04c.4-.75 1.36-1.55 2.8-1.55 2.99 0 3.56 1.97 3.56 4.53v5.27Z"/></svg></a>
+      <a class="social" href="mailto:theo.jeanmart@gmail.com" aria-label="Send an email"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5.5A2.5 2.5 0 0 1 4.5 3h15A2.5 2.5 0 0 1 22 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 18.5v-13Zm2.1-.3 7.18 6.1a1.1 1.1 0 0 0 1.44 0l7.18-6.1H4.1Zm15.7 3-5.78 4.9a3.1 3.1 0 0 1-4.04 0L4.2 8.2v10.3c0 .17.13.3.3.3h15c.17 0 .3-.13.3-.3V8.2Z"/></svg></a>
+    </div>
+    <p>© 2026 Théo Jeanmart</p>
+  </footer>
 </body>
 </html>
