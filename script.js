@@ -1,35 +1,9 @@
 const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
 const stage = document.getElementById('stage');
 const figures = [...document.querySelectorAll('.side-figure')];
-const projectPanels = [...document.querySelectorAll('.project')];
 const interests = [...document.querySelectorAll('.interest')];
 const interestSection = document.getElementById('interests');
-const experienceItems = [...document.querySelectorAll('.experience-item[data-dialog]')];
-
-function drawPointCloud() {
-  const canvas = document.getElementById('point-cloud');
-  if (!canvas) return;
-  const context = canvas.getContext('2d');
-  if (!context) return;
-  let seed = 4815;
-  const random = () => {
-    seed = (seed * 1664525 + 1013904223) >>> 0;
-    return seed / 4294967296;
-  };
-  context.clearRect(0, 0, canvas.width, canvas.height);
-  for (let i = 0; i < 640; i++) {
-    const angle = random() * Math.PI * 2;
-    const radius = Math.sqrt(random()) * 116;
-    const depth = (random() - 0.5) * 90;
-    const x = 160 + Math.cos(angle) * radius * (0.77 + depth / 500) + depth * 0.18;
-    const y = 160 + Math.sin(angle) * radius * 0.72 + depth * 0.48;
-    const size = 0.55 + random() * 1.45;
-    context.fillStyle = `rgba(38, 49, 55, ${0.26 + random() * 0.52})`;
-    context.beginPath();
-    context.arc(x, y, size, 0, Math.PI * 2);
-    context.fill();
-  }
-}
+const dialogTriggers = [...document.querySelectorAll('[data-dialog]')];
 
 function placeFigures() {
   if (!stage) return;
@@ -55,14 +29,14 @@ function updateScrollMotion() {
     let x = 0, y = 0, rotation = 0;
     switch (figure.dataset.motion) {
       case 'cloud':
-        rotation = window.scrollY * 0.16;
+        rotation = progress * 22;
         break;
       case 'arm':
-        figure.style.setProperty('--gripper-turn', (window.scrollY * 0.42) + 'deg');
+        figure.style.setProperty('--gripper-roll', (progress * 45) + 'deg');
         break;
       case 'formula':
-        x = progress * 27;
-        figure.style.setProperty('--wheel-turn', (window.scrollY * 0.42) + 'deg');
+        x = -progress * 34;
+        figure.style.setProperty('--wheel-turn', (-window.scrollY * 1.05) + 'deg');
         break;
       case 'drone':
         x = progress * 28;
@@ -77,20 +51,27 @@ function updateScrollMotion() {
   }
 }
 
-for (const item of experienceItems) {
+for (const item of dialogTriggers) {
   const dialog = document.getElementById(item.dataset.dialog);
   if (!dialog) continue;
-  const openDialog = () => { if (!dialog.open) dialog.showModal(); };
-  item.addEventListener('click', openDialog);
+  let openedByKeyboard = false;
+  const openDialog = fromKeyboard => {
+    openedByKeyboard = fromKeyboard;
+    if (!dialog.open) dialog.showModal();
+  };
+  item.addEventListener('click', () => openDialog(false));
   item.addEventListener('keydown', event => {
     if (event.key === 'Enter' || event.key === ' ') {
       event.preventDefault();
-      openDialog();
+      openDialog(true);
     }
   });
   dialog.querySelector('.dialog-close')?.addEventListener('click', () => dialog.close());
   dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
-  dialog.addEventListener('close', () => item.focus({preventScroll:true}));
+  dialog.addEventListener('close', () => {
+    if (openedByKeyboard) item.focus({preventScroll:true});
+    else item.blur();
+  });
 }
 
 function queueScrollMotion() {
@@ -98,12 +79,6 @@ function queueScrollMotion() {
     scrollQueued = true;
     requestAnimationFrame(updateScrollMotion);
   }
-}
-
-for (const panel of projectPanels) {
-  panel.addEventListener('toggle', () => {
-    if (panel.open) projectPanels.forEach(other => { if (other !== panel) other.open = false; });
-  });
 }
 
 for (const item of interests) {
@@ -139,6 +114,5 @@ if (interestSection && !motionPreference.matches) {
 window.addEventListener('resize', () => { placeFigures(); queueScrollMotion(); }, {passive:true});
 window.addEventListener('scroll', queueScrollMotion, {passive:true});
 window.addEventListener('load', () => { placeFigures(); queueScrollMotion(); });
-drawPointCloud();
 placeFigures();
 queueScrollMotion();

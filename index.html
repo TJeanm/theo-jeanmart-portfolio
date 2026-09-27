@@ -24,7 +24,7 @@
 
   <div class="stage" id="stage">
     <div class="margin-art" aria-hidden="true">
-      <div class="side-figure side-figure--left side-figure--cloud" data-anchor="experience" data-offset="260" data-motion="cloud"><canvas id="point-cloud" width="320" height="320"></canvas></div>
+      <div class="side-figure side-figure--left side-figure--cloud" data-anchor="experience" data-offset="260" data-motion="cloud"><img src="assets/point-cloud-scene.png" alt="" loading="lazy"></div>
       <div class="side-figure side-figure--right side-figure--arm" data-anchor="experience" data-offset="720" data-motion="arm"><div class="cobot-assembly"><img class="cobot-body" src="assets/cobot-body.png" alt="" loading="lazy"><img class="cobot-gripper" src="assets/cobot-gripper.png" alt="" loading="lazy"></div></div>
       <div class="side-figure side-figure--left side-figure--formula" data-anchor="projects" data-offset="80" data-motion="formula"><div class="car-assembly"><img class="car-body" src="assets/formula-car.png" alt="" loading="lazy"><img class="car-wheel car-wheel--rear" src="assets/formula-wheel.png" alt="" loading="lazy"><img class="car-wheel car-wheel--front" src="assets/formula-wheel.png" alt="" loading="lazy"></div></div>
       <div class="side-figure side-figure--right side-figure--drone" data-anchor="projects" data-offset="530" data-motion="drone"><div class="drone-assembly"><img class="drone-body" src="assets/drone-body.png" alt="" loading="lazy"><img class="drone-rotor drone-rotor--one" src="assets/drone-rotor.png" alt="" loading="lazy"><img class="drone-rotor drone-rotor--two" src="assets/drone-rotor.png" alt="" loading="lazy"><img class="drone-rotor drone-rotor--three" src="assets/drone-rotor.png" alt="" loading="lazy"><img class="drone-rotor drone-rotor--four" src="assets/drone-rotor.png" alt="" loading="lazy"></div></div>
@@ -63,58 +63,39 @@
       <section class="section skills" id="skills" aria-labelledby="skills-title">
         <h2 class="section-title" id="skills-title"><span aria-hidden="true">&gt;</span> Skills</h2>
         <div class="skill-groups">
-          <svg class="skill-links" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M50 14 L17 50 L50 86 L83 50 Z"/></svg>
           <div class="skill-blob skill-blob--simulation"><h3>Simulation</h3><p>Gazebo <span>·</span> RViz2 <span>·</span> MoveIt 2</p></div>
           <div class="skill-blob skill-blob--computing"><h3>Computing</h3><p>Python <span>·</span> C++ <span>·</span> C <span>·</span> Linux/Unix <span>·</span> Git</p></div>
           <div class="skill-blob skill-blob--robotics"><h3>Robotics</h3><p>ROS2 <span>·</span> Localization <span>·</span> Point-cloud registration <span>·</span> Path planning</p></div>
           <div class="skill-blob skill-blob--libraries"><h3>Libraries</h3><p>PCL <span>·</span> Eigen <span>·</span> Ceres Solver <span>·</span> OMPL</p></div>
+          <div class="skill-blob skill-blob--languages"><h3>Languages</h3><p>English <span>·</span> French <span>·</span> Swedish</p></div>
+          <div class="skill-blob skill-blob--soft"><h3>Soft skills</h3><p>Agile methods <span>·</span> Scrum <span>·</span> Project management</p></div>
         </div>
       </section>
 
       <section class="section projects" id="projects" aria-labelledby="projects-title">
         <h2 class="section-title" id="projects-title"><span aria-hidden="true">&gt;</span> Projects</h2>
-        <p class="section-note">Select a project to see the approach and system architecture.</p>
+        <p class="section-note">Select a project to read the full report and system architecture.</p>
         <div class="project-list">
-          <details class="project">
-            <summary><span class="project-name">3D perception & localization</span><span class="project-meta">ROS2 · 2026</span><span class="project-toggle" aria-hidden="true">+</span></summary>
-            <div class="project-report">
-              <p class="report-kicker">Research internship · Örebro University</p>
-              <h3>From legacy registration to a reusable ROS2 stack</h3>
-              <p>The work began with a legacy NDT registration system. I separated the core matching algorithms, ROS interfaces and evaluation code into reusable parts, then extended registration to full six-degree-of-freedom LiDAR and radar alignment.</p>
-              <p>Point-to-distribution and distribution-to-distribution matching were evaluated with gradient, Newton and Ceres-based optimisation, including multi-resolution processing. PointCloud2 input, rosbag replay and RViz2 visualisation made experiments easier to inspect and reproduce.</p>
-              <p class="diagram-label">Conceptual architecture</p><div class="diagram" role="img" aria-label="Conceptual architecture: LiDAR or radar PointCloud2 data flows into registration, then optimization, then pose estimation and evaluation."><span>LiDAR / radar<br>PointCloud2</span><i aria-hidden="true">→</i><span>P2D / D2D<br>registration</span><i aria-hidden="true">→</i><span>Optimisation<br>+ pose</span><i aria-hidden="true">→</i><span>RViz2 /<br>evaluation</span></div>
-            </div>
-          </details>
-          <details class="project">
-            <summary><span class="project-name">Formula Student path planning</span><span class="project-meta">TLSe Racing · 2025–</span><span class="project-toggle" aria-hidden="true">+</span></summary>
-            <div class="project-report">
-              <p class="report-kicker">Autonomous racing</p>
-              <h3>Turning the perceived track into a trajectory</h3>
-              <p>The driverless vehicle needs a path it can actually follow. My workstream uses the track and cone information delivered by perception to construct a drivable trajectory and connects that result to the wider autonomy stack.</p>
-              <p>As Scrum Master for the planning workstream, I also coordinated priorities and integration with perception and vehicle-control components. The team iterates through simulation and system-level tests to check the behaviour of the complete chain.</p>
-              <p class="diagram-label">Conceptual architecture</p><div class="diagram" role="img" aria-label="Conceptual architecture: cone detections produce a track model, which feeds path planning and then vehicle control."><span>Cone<br>detections</span><i aria-hidden="true">→</i><span>Track<br>model</span><i aria-hidden="true">→</i><span>Path<br>planner</span><i aria-hidden="true">→</i><span>Vehicle<br>control</span></div>
-            </div>
-          </details>
-          <details class="project">
-            <summary><span class="project-name">Industry 4.0 robotic integration</span><span class="project-meta">UPSSITECH · 2026–</span><span class="project-toggle" aria-hidden="true">+</span></summary>
-            <div class="project-report">
-              <p class="report-kicker">Final-year engineering project</p>
-              <h3>One demonstrator, several kinds of robot</h3>
-              <p>This proof of concept brings collaborative and mobile robots into a connected production environment. The team is defining the system architecture and coordinating two Yaskawa collaborative robots, two conveyors and a PAL Robotics TIAGo mobile robot.</p>
-              <p>The central challenge is making heterogeneous equipment operate as one demonstrator. The work spans interfaces between machines, task coordination and validation of the end-to-end manufacturing sequence.</p>
-              <p class="diagram-label">Conceptual architecture</p><div class="diagram" role="img" aria-label="Conceptual architecture: a coordination layer connects two Yaskawa collaborative robots, conveyors and a TIAGo mobile robot."><span>Task<br>coordination</span><i aria-hidden="true">→</i><span>2 Yaskawa<br>cobots</span><span>2<br>conveyors</span><span>TIAGo<br>mobile robot</span></div>
-            </div>
-          </details>
-          <details class="project">
-            <summary><span class="project-name">Autonomous mobile platform</span><span class="project-meta">Academic project · 2024–25</span><span class="project-toggle" aria-hidden="true">+</span></summary>
-            <div class="project-report">
-              <p class="report-kicker">From components to a working robot</p>
-              <h3>Building the complete hardware and software chain</h3>
-              <p>The platform was designed and assembled from mechanical, electronic and software components. I worked on C++ and Python control software linking sensing, actuation and higher-level autonomous motion.</p>
-              <p>Rather than treating each subsystem in isolation, the team tested the physical robot repeatedly and adjusted the integration until it could navigate autonomously as a complete system.</p>
-              <p class="diagram-label">Conceptual architecture</p><div class="diagram" role="img" aria-label="Conceptual architecture: sensors feed robot state, navigation produces motion commands, and motor control drives the platform."><span>Sensors</span><i aria-hidden="true">→</i><span>Robot<br>state</span><i aria-hidden="true">→</i><span>Navigation</span><i aria-hidden="true">→</i><span>Motor<br>control</span></div>
-            </div>
-          </details>
+          <article class="project-item" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Read more about 3D perception &amp; localization" data-dialog="project-perception">
+            <p class="eyebrow">ROS2 · 2026</p>
+            <h3>3D perception & localization</h3>
+            <p class="project-teaser">3D registration for LiDAR and radar, rebuilt as a reusable ROS2 research workflow.</p>
+          </article>
+          <article class="project-item" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Read more about Formula Student path planning" data-dialog="project-formula">
+            <p class="eyebrow">TLSe Racing · 2025–</p>
+            <h3>Formula Student path planning</h3>
+            <p class="project-teaser">A planning pipeline that turns track and cone data into a drivable trajectory.</p>
+          </article>
+          <article class="project-item" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Read more about Industry 4.0 robotic integration" data-dialog="project-industry">
+            <p class="eyebrow">UPSSITECH · 2026–</p>
+            <h3>Industry 4.0 robotic integration</h3>
+            <p class="project-teaser">A connected demonstrator bringing cobots, conveyors and a mobile robot together.</p>
+          </article>
+          <article class="project-item" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Read more about Autonomous mobile platform" data-dialog="project-platform">
+            <p class="eyebrow">Academic project · 2024–25</p>
+            <h3>Autonomous mobile platform</h3>
+            <p class="project-teaser">A mobile robot built across mechanics, electronics and C++/Python control software.</p>
+          </article>
         </div>
       </section>
 
@@ -168,6 +149,66 @@
       <div class="dialog-section"><h3>Building a mobile robot</h3><p>In an autonomous mobile platform project, I worked across mechanical, electronic and software components. C++ and Python control software linked sensing and actuation, while repeated tests on the physical platform guided integration.</p></div>
       <div class="dialog-section"><h3>Connected robotic systems</h3><p>An Industry 4.0 demonstrator brings collaborative robots, conveyors and a mobile robot into one coordinated workflow. The project covers system architecture, interfaces between different machines and validation of the complete sequence.</p></div>
       <p class="dialog-tags">Robotics · Computer science · AI · System integration</p>
+    </div>
+  </dialog>
+
+  <dialog class="experience-dialog project-dialog" id="project-perception" aria-labelledby="project-perception-title">
+    <div class="dialog-page">
+      <button class="dialog-close" type="button" aria-label="Close project details">×</button>
+      <p class="dialog-kicker">Project / 01</p>
+      <h2 id="project-perception-title">3D perception & localization</h2>
+      <div class="project-report">
+              <p class="report-kicker">Research internship · Örebro University</p>
+              <h3>From legacy registration to a reusable ROS2 stack</h3>
+              <p>The work began with a legacy NDT registration system. I separated the core matching algorithms, ROS interfaces and evaluation code into reusable parts, then extended registration to full six-degree-of-freedom LiDAR and radar alignment.</p>
+              <p>Point-to-distribution and distribution-to-distribution matching were evaluated with gradient, Newton and Ceres-based optimisation, including multi-resolution processing. PointCloud2 input, rosbag replay and RViz2 visualisation made experiments easier to inspect and reproduce.</p>
+              <p class="diagram-label">Conceptual architecture</p><div class="diagram" role="img" aria-label="Conceptual architecture: LiDAR or radar PointCloud2 data flows into registration, then optimization, then pose estimation and evaluation."><span>LiDAR / radar<br>PointCloud2</span><i aria-hidden="true">→</i><span>P2D / D2D<br>registration</span><i aria-hidden="true">→</i><span>Optimisation<br>+ pose</span><i aria-hidden="true">→</i><span>RViz2 /<br>evaluation</span></div>
+            </div>
+    </div>
+  </dialog>
+
+  <dialog class="experience-dialog project-dialog" id="project-formula" aria-labelledby="project-formula-title">
+    <div class="dialog-page">
+      <button class="dialog-close" type="button" aria-label="Close project details">×</button>
+      <p class="dialog-kicker">Project / 02</p>
+      <h2 id="project-formula-title">Formula Student path planning</h2>
+      <div class="project-report">
+              <p class="report-kicker">Autonomous racing</p>
+              <h3>Turning the perceived track into a trajectory</h3>
+              <p>The driverless vehicle needs a path it can actually follow. My workstream uses the track and cone information delivered by perception to construct a drivable trajectory and connects that result to the wider autonomy stack.</p>
+              <p>As Scrum Master for the planning workstream, I also coordinated priorities and integration with perception and vehicle-control components. The team iterates through simulation and system-level tests to check the behaviour of the complete chain.</p>
+              <p class="diagram-label">Conceptual architecture</p><div class="diagram" role="img" aria-label="Conceptual architecture: cone detections produce a track model, which feeds path planning and then vehicle control."><span>Cone<br>detections</span><i aria-hidden="true">→</i><span>Track<br>model</span><i aria-hidden="true">→</i><span>Path<br>planner</span><i aria-hidden="true">→</i><span>Vehicle<br>control</span></div>
+            </div>
+    </div>
+  </dialog>
+
+  <dialog class="experience-dialog project-dialog" id="project-industry" aria-labelledby="project-industry-title">
+    <div class="dialog-page">
+      <button class="dialog-close" type="button" aria-label="Close project details">×</button>
+      <p class="dialog-kicker">Project / 03</p>
+      <h2 id="project-industry-title">Industry 4.0 robotic integration</h2>
+      <div class="project-report">
+              <p class="report-kicker">Final-year engineering project</p>
+              <h3>One demonstrator, several kinds of robot</h3>
+              <p>This proof of concept brings collaborative and mobile robots into a connected production environment. The team is defining the system architecture and coordinating two Yaskawa collaborative robots, two conveyors and a PAL Robotics TIAGo mobile robot.</p>
+              <p>The central challenge is making heterogeneous equipment operate as one demonstrator. The work spans interfaces between machines, task coordination and validation of the end-to-end manufacturing sequence.</p>
+              <p class="diagram-label">Conceptual architecture</p><div class="diagram" role="img" aria-label="Conceptual architecture: a coordination layer connects two Yaskawa collaborative robots, conveyors and a TIAGo mobile robot."><span>Task<br>coordination</span><i aria-hidden="true">→</i><span>2 Yaskawa<br>cobots</span><span>2<br>conveyors</span><span>TIAGo<br>mobile robot</span></div>
+            </div>
+    </div>
+  </dialog>
+
+  <dialog class="experience-dialog project-dialog" id="project-platform" aria-labelledby="project-platform-title">
+    <div class="dialog-page">
+      <button class="dialog-close" type="button" aria-label="Close project details">×</button>
+      <p class="dialog-kicker">Project / 04</p>
+      <h2 id="project-platform-title">Autonomous mobile platform</h2>
+      <div class="project-report">
+              <p class="report-kicker">From components to a working robot</p>
+              <h3>Building the complete hardware and software chain</h3>
+              <p>The platform was designed and assembled from mechanical, electronic and software components. I worked on C++ and Python control software linking sensing, actuation and higher-level autonomous motion.</p>
+              <p>Rather than treating each subsystem in isolation, the team tested the physical robot repeatedly and adjusted the integration until it could navigate autonomously as a complete system.</p>
+              <p class="diagram-label">Conceptual architecture</p><div class="diagram" role="img" aria-label="Conceptual architecture: sensors feed robot state, navigation produces motion commands, and motor control drives the platform."><span>Sensors</span><i aria-hidden="true">→</i><span>Robot<br>state</span><i aria-hidden="true">→</i><span>Navigation</span><i aria-hidden="true">→</i><span>Motor<br>control</span></div>
+            </div>
     </div>
   </dialog>
 
