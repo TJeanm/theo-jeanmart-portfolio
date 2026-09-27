@@ -4,6 +4,32 @@ const figures = [...document.querySelectorAll('.side-figure')];
 const projectPanels = [...document.querySelectorAll('.project')];
 const interests = [...document.querySelectorAll('.interest')];
 const interestSection = document.getElementById('interests');
+const experienceItems = [...document.querySelectorAll('.experience-item[data-dialog]')];
+
+function drawPointCloud() {
+  const canvas = document.getElementById('point-cloud');
+  if (!canvas) return;
+  const context = canvas.getContext('2d');
+  if (!context) return;
+  let seed = 4815;
+  const random = () => {
+    seed = (seed * 1664525 + 1013904223) >>> 0;
+    return seed / 4294967296;
+  };
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  for (let i = 0; i < 640; i++) {
+    const angle = random() * Math.PI * 2;
+    const radius = Math.sqrt(random()) * 116;
+    const depth = (random() - 0.5) * 90;
+    const x = 160 + Math.cos(angle) * radius * (0.77 + depth / 500) + depth * 0.18;
+    const y = 160 + Math.sin(angle) * radius * 0.72 + depth * 0.48;
+    const size = 0.55 + random() * 1.45;
+    context.fillStyle = `rgba(38, 49, 55, ${0.26 + random() * 0.52})`;
+    context.beginPath();
+    context.arc(x, y, size, 0, Math.PI * 2);
+    context.fill();
+  }
+}
 
 function placeFigures() {
   if (!stage) return;
@@ -29,26 +55,42 @@ function updateScrollMotion() {
     let x = 0, y = 0, rotation = 0;
     switch (figure.dataset.motion) {
       case 'cloud':
-        y = progress * -20;
-        rotation = progress * 35;
+        rotation = window.scrollY * 0.16;
         break;
       case 'arm':
-        y = progress * -24;
-        rotation = progress * -12;
+        figure.style.setProperty('--gripper-turn', (window.scrollY * 0.42) + 'deg');
         break;
       case 'formula':
         x = progress * 27;
         figure.style.setProperty('--wheel-turn', (window.scrollY * 0.42) + 'deg');
         break;
       case 'drone':
-        y = progress * -38;
-        rotation = progress * 7;
+        x = progress * 28;
+        y = progress * -9;
+        figure.style.setProperty('--rotor-turn', (window.scrollY * 2.2) + 'deg');
+        figure.style.setProperty('--rotor-turn-reverse', (-window.scrollY * 2.2) + 'deg');
         break;
     }
     figure.style.setProperty('--move-x', x + 'px');
     figure.style.setProperty('--move-y', y + 'px');
     figure.style.setProperty('--turn', rotation + 'deg');
   }
+}
+
+for (const item of experienceItems) {
+  const dialog = document.getElementById(item.dataset.dialog);
+  if (!dialog) continue;
+  const openDialog = () => { if (!dialog.open) dialog.showModal(); };
+  item.addEventListener('click', openDialog);
+  item.addEventListener('keydown', event => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      openDialog();
+    }
+  });
+  dialog.querySelector('.dialog-close')?.addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
+  dialog.addEventListener('close', () => item.focus({preventScroll:true}));
 }
 
 function queueScrollMotion() {
@@ -97,5 +139,6 @@ if (interestSection && !motionPreference.matches) {
 window.addEventListener('resize', () => { placeFigures(); queueScrollMotion(); }, {passive:true});
 window.addEventListener('scroll', queueScrollMotion, {passive:true});
 window.addEventListener('load', () => { placeFigures(); queueScrollMotion(); });
+drawPointCloud();
 placeFigures();
 queueScrollMotion();

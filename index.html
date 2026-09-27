@@ -16,26 +16,25 @@
 <body>
   <header class="hero" id="top">
     <div class="hero-copy">
-      <p class="hero-lead">Hello, I'm</p>
+      <p class="hero-lead">Hi, I'm</p>
       <h1>Théo Jeanmart</h1>
       <p>Robotics & AI engineering student working on mobile robots, 3D perception and autonomous navigation.</p>
     </div>
-    <span class="hero-index" aria-hidden="true">01 — 04</span>
   </header>
 
   <div class="stage" id="stage">
     <div class="margin-art" aria-hidden="true">
-      <div class="side-figure side-figure--left side-figure--cloud" data-anchor="experience" data-offset="260" data-motion="cloud"><img src="assets/point-cloud.png" alt="" loading="lazy"></div>
-      <div class="side-figure side-figure--right side-figure--arm" data-anchor="experience" data-offset="720" data-motion="arm"><img src="assets/robotic-arm.png" alt="" loading="lazy"></div>
+      <div class="side-figure side-figure--left side-figure--cloud" data-anchor="experience" data-offset="260" data-motion="cloud"><canvas id="point-cloud" width="320" height="320"></canvas></div>
+      <div class="side-figure side-figure--right side-figure--arm" data-anchor="experience" data-offset="720" data-motion="arm"><div class="cobot-assembly"><img class="cobot-body" src="assets/cobot-body.png" alt="" loading="lazy"><img class="cobot-gripper" src="assets/cobot-gripper.png" alt="" loading="lazy"></div></div>
       <div class="side-figure side-figure--left side-figure--formula" data-anchor="projects" data-offset="80" data-motion="formula"><div class="car-assembly"><img class="car-body" src="assets/formula-car.png" alt="" loading="lazy"><img class="car-wheel car-wheel--rear" src="assets/formula-wheel.png" alt="" loading="lazy"><img class="car-wheel car-wheel--front" src="assets/formula-wheel.png" alt="" loading="lazy"></div></div>
-      <div class="side-figure side-figure--right side-figure--drone" data-anchor="projects" data-offset="530" data-motion="drone"><img src="assets/drone.png" alt="" loading="lazy"></div>
+      <div class="side-figure side-figure--right side-figure--drone" data-anchor="projects" data-offset="530" data-motion="drone"><div class="drone-assembly"><img class="drone-body" src="assets/drone-body.png" alt="" loading="lazy"><img class="drone-rotor drone-rotor--one" src="assets/drone-rotor.png" alt="" loading="lazy"><img class="drone-rotor drone-rotor--two" src="assets/drone-rotor.png" alt="" loading="lazy"><img class="drone-rotor drone-rotor--three" src="assets/drone-rotor.png" alt="" loading="lazy"><img class="drone-rotor drone-rotor--four" src="assets/drone-rotor.png" alt="" loading="lazy"></div></div>
     </div>
 
     <main class="content">
       <section class="section experience" id="experience" aria-labelledby="experience-title">
-        <h2 class="section-title section-title--center" id="experience-title"><span aria-hidden="true">&gt;</span> Experience</h2>
+        <h2 class="section-title" id="experience-title"><span aria-hidden="true">&gt;</span> Experience</h2>
         <div class="experience-list">
-          <article class="experience-item" tabindex="0">
+          <article class="experience-item" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Read more about Robotics Software Intern at Örebro University" data-dialog="experience-orebro">
             <p class="eyebrow">Apr 2026 — Aug 2026</p>
             <h3>Robotics Software Intern</h3>
             <p class="organisation">@ Örebro University · AASS</p>
@@ -43,7 +42,7 @@
             <p>Modernised a 3D point-cloud registration framework in ROS2, with LiDAR and radar matching, evaluation tools and RViz2 visualisation.</p>
             <ul class="prompt-list"><li>ROS2 & modern C++</li><li>6-DoF point-cloud registration</li><li>Research tooling</li></ul>
           </article>
-          <article class="experience-item" tabindex="0">
+          <article class="experience-item" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Read more about Path Planning Developer at TLSe Racing" data-dialog="experience-tlse">
             <p class="eyebrow">2025 — Present</p>
             <h3>Path Planning Developer & Scrum Master</h3>
             <p class="organisation">@ TLSe Racing · Formula Student</p>
@@ -51,11 +50,12 @@
             <p>Developing the planning pipeline that turns perceived track and cone data into a drivable trajectory for an autonomous race car.</p>
             <ul class="prompt-list"><li>Path planning</li><li>Autonomy integration</li><li>Simulation and testing</li></ul>
           </article>
-          <article class="experience-item" tabindex="0">
+          <article class="experience-item" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Read more about Engineering Degree at UPSSITECH" data-dialog="experience-upssitech">
             <p class="eyebrow">2024 — 2027</p>
             <h3>Engineering Degree in Robotics & AI</h3>
             <p class="organisation">@ UPSSITECH · University of Toulouse</p>
             <p>Robotics, computer science and artificial intelligence.</p>
+            <ul class="prompt-list"><li>Robotics, computer science &amp; AI</li><li>Autonomous mobile platform</li><li>Industry 4.0 robotic integration</li></ul>
           </article>
         </div>
       </section>
@@ -63,10 +63,11 @@
       <section class="section skills" id="skills" aria-labelledby="skills-title">
         <h2 class="section-title" id="skills-title"><span aria-hidden="true">&gt;</span> Skills</h2>
         <div class="skill-groups">
+          <svg class="skill-links" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M50 14 L17 50 L50 86 L83 50 Z"/></svg>
           <div class="skill-blob skill-blob--simulation"><h3>Simulation</h3><p>Gazebo <span>·</span> RViz2 <span>·</span> MoveIt 2</p></div>
           <div class="skill-blob skill-blob--computing"><h3>Computing</h3><p>Python <span>·</span> C++ <span>·</span> C <span>·</span> Linux/Unix <span>·</span> Git</p></div>
           <div class="skill-blob skill-blob--robotics"><h3>Robotics</h3><p>ROS2 <span>·</span> Localization <span>·</span> Point-cloud registration <span>·</span> Path planning</p></div>
-          <div class="skill-blob skill-blob--libraries"><h3>Libraries</h3><p>PCL <span>·</span> Eigen <span>·</span> Ceres Solver</p></div>
+          <div class="skill-blob skill-blob--libraries"><h3>Libraries</h3><p>PCL <span>·</span> Eigen <span>·</span> Ceres Solver <span>·</span> OMPL</p></div>
         </div>
       </section>
 
@@ -120,20 +121,59 @@
       <section class="section interests" id="interests" aria-labelledby="interests-title">
         <h2 class="section-title" id="interests-title"><span aria-hidden="true">&gt;</span> Interests</h2>
         <div class="interest-grid">
-          <details class="interest" data-follow="0.7"><summary><img src="assets/sailing.png" alt="" loading="lazy"><span>Sailing</span></summary><p>Short note to come.</p></details>
-          <details class="interest" data-follow="1"><summary><img src="assets/rubiks-cube.png" alt="" loading="lazy"><span>Rubik's Cube</span></summary><p>Short note to come.</p></details>
-          <details class="interest" data-follow="0.8"><summary><img src="assets/gt3-car.png" alt="" loading="lazy"><span>Motorsport</span></summary><p>Short note to come.</p></details>
-          <details class="interest" data-follow="1.1"><summary><img src="assets/judo-gi.png" alt="" loading="lazy"><span>Judo</span></summary><p>Ten years on the mat. Brown belt.</p></details>
-          <details class="interest" data-follow="0.9"><summary><img src="assets/motorcycle.png" alt="" loading="lazy"><span>Motorcycles</span></summary><p>Short note to come.</p></details>
-          <details class="interest" data-follow="1.2"><summary><img src="assets/table-tennis.png" alt="" loading="lazy"><span>Table tennis</span></summary><p>Short note to come.</p></details>
+          <details class="interest" data-follow="1.1"><summary><img src="assets/judo-gi-brown-belt.png" alt="" loading="lazy"><span>Judo</span></summary><p>Ten years on the mat. Brown belt.</p></details>
+          <details class="interest" data-follow="0.7"><summary><img src="assets/sailing-centerboard-rudder.png" alt="" loading="lazy"><span>Sailing</span></summary><p>I've sailed Laser/ILCA dinghies and Hobie Cats.</p></details>
+          <details class="interest" data-follow="1"><summary><img src="assets/rubiks-cube-colored.png" alt="" loading="lazy"><span>Rubik's Cube</span></summary><p>Personal best: 15.34 seconds.</p></details>
+          <details class="interest" data-follow="0.8"><summary><img src="assets/gt3-car.png" alt="" loading="lazy"><span>Motorsport</span></summary><p>A car and motorsport enthusiast since childhood.</p></details>
+          <details class="interest" data-follow="0.9"><summary><img src="assets/motorcycle.png" alt="" loading="lazy"><span>Motorcycles</span></summary><p>Currently working towards my motorcycle licence.</p></details>
+          <details class="interest" data-follow="1.2"><summary><img src="assets/table-tennis.png" alt="" loading="lazy"><span>Table tennis</span></summary><p>Self-appointed best player at the Decathlon office.</p></details>
         </div>
       </section>
     </main>
   </div>
 
+  <dialog class="experience-dialog" id="experience-orebro" aria-labelledby="orebro-title">
+    <div class="dialog-page">
+      <button class="dialog-close" type="button" aria-label="Close experience details">×</button>
+      <p class="dialog-kicker">Experience / 01 · Apr–Aug 2026</p>
+      <h2 id="orebro-title">Robotics Software Intern</h2>
+      <p class="dialog-organisation">Örebro University · AASS / Örebro, Sweden</p>
+      <p class="dialog-intro">I worked on 3D point-cloud registration for robotic perception, moving a legacy research framework into a modular ROS2 workflow.</p>
+      <div class="dialog-section"><h3>What I worked on</h3><p>I separated registration algorithms, ROS interfaces and evaluation tools so experiments could be repeated and extended more easily. The work covered six-degree-of-freedom alignment of LiDAR and radar point clouds, with point-to-distribution and distribution-to-distribution matching.</p></div>
+      <div class="dialog-section"><h3>How the system was tested</h3><p>I explored gradient, Newton and Ceres-based optimisation, including multi-resolution processing. PointCloud2 input, rosbag replay and RViz2 visualisation connected the algorithmic work to a practical research workflow.</p></div>
+      <p class="dialog-tags">ROS2 · Modern C++ · LiDAR · Radar · P2D / D2D · RViz2</p>
+    </div>
+  </dialog>
+
+  <dialog class="experience-dialog" id="experience-tlse" aria-labelledby="tlse-title">
+    <div class="dialog-page">
+      <button class="dialog-close" type="button" aria-label="Close experience details">×</button>
+      <p class="dialog-kicker">Experience / 02 · 2025–Present</p>
+      <h2 id="tlse-title">Path Planning Developer &amp; Scrum Master</h2>
+      <p class="dialog-organisation">TLSe Racing · Formula Student / Toulouse, France</p>
+      <p class="dialog-intro">Our driverless Formula Student car needs a path that connects what its sensors perceive to what the vehicle can drive.</p>
+      <div class="dialog-section"><h3>Planning pipeline</h3><p>I develop the planning workstream that takes track and cone information from perception and turns it into a drivable trajectory. That means considering the interface to the perception stack upstream and vehicle control downstream, rather than treating the planner as an isolated algorithm.</p></div>
+      <div class="dialog-section"><h3>Team and integration</h3><p>As Scrum Master, I help organise priorities, coordinate the planning work with other autonomy teams, and bring components together for simulation and system-level testing. The aim is to understand the complete car behaviour as the stack evolves.</p></div>
+      <p class="dialog-tags">Path planning · Autonomous racing · Integration · Simulation</p>
+    </div>
+  </dialog>
+
+  <dialog class="experience-dialog" id="experience-upssitech" aria-labelledby="upssitech-title">
+    <div class="dialog-page">
+      <button class="dialog-close" type="button" aria-label="Close experience details">×</button>
+      <p class="dialog-kicker">Experience / 03 · 2024–2027</p>
+      <h2 id="upssitech-title">Engineering Degree in Robotics &amp; AI</h2>
+      <p class="dialog-organisation">UPSSITECH · University of Toulouse / Toulouse, France</p>
+      <p class="dialog-intro">My engineering studies bring together robotics, computer science and artificial intelligence, with an emphasis on systems that move from design to a working prototype.</p>
+      <div class="dialog-section"><h3>Building a mobile robot</h3><p>In an autonomous mobile platform project, I worked across mechanical, electronic and software components. C++ and Python control software linked sensing and actuation, while repeated tests on the physical platform guided integration.</p></div>
+      <div class="dialog-section"><h3>Connected robotic systems</h3><p>An Industry 4.0 demonstrator brings collaborative robots, conveyors and a mobile robot into one coordinated workflow. The project covers system architecture, interfaces between different machines and validation of the complete sequence.</p></div>
+      <p class="dialog-tags">Robotics · Computer science · AI · System integration</p>
+    </div>
+  </dialog>
+
   <footer class="footer">
     <div class="socials" aria-label="Social links">
-      <span class="social social-inactive" role="img" aria-label="GitHub profile link coming soon" title="GitHub profile link coming soon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297C5.37.297 0 5.67 0 12.297c0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.016-2.04-3.338.726-4.043-1.61-4.043-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.238 1.84 1.238 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.304-5.466-1.333-5.466-5.93 0-1.31.467-2.38 1.235-3.22-.124-.303-.536-1.524.117-3.176 0 0 1.008-.323 3.301 1.23a11.517 11.517 0 0 1 3.003-.404c1.02.005 2.047.138 3.003.404 2.29-1.553 3.296-1.23 3.296-1.23.655 1.652.243 2.873.12 3.176.77.84 1.233 1.91 1.233 3.22 0 4.61-2.805 5.624-5.476 5.922.43.372.823 1.102.823 2.222 0 1.606-.015 2.898-.015 3.293 0 .32.217.694.825.576C20.565 22.092 24 17.596 24 12.297 24 5.67 18.627.297 12 .297z"/></svg></span>
+      <a class="social" href="https://github.com/TJeanm" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297C5.37.297 0 5.67 0 12.297c0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.016-2.04-3.338.726-4.043-1.61-4.043-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.238 1.84 1.238 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.304-5.466-1.333-5.466-5.93 0-1.31.467-2.38 1.235-3.22-.124-.303-.536-1.524.117-3.176 0 0 1.008-.323 3.301 1.23a11.517 11.517 0 0 1 3.003-.404c1.02.005 2.047.138 3.003.404 2.29-1.553 3.296-1.23 3.296-1.23.655 1.652.243 2.873.12 3.176.77.84 1.233 1.91 1.233 3.22 0 4.61-2.805 5.624-5.476 5.922.43.372.823 1.102.823 2.222 0 1.606-.015 2.898-.015 3.293 0 .32.217.694.825.576C20.565 22.092 24 17.596 24 12.297 24 5.67 18.627.297 12 .297z"/></svg></a>
       <a class="social" href="https://www.linkedin.com/in/theo-jeanmart-433717214" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 2H3.55C2.7 2 2 2.67 2 3.5v17c0 .83.7 1.5 1.55 1.5h16.9c.86 0 1.55-.67 1.55-1.5v-17c0-.83-.69-1.5-1.55-1.5ZM7.93 18.75H4.98V9.2h2.95v9.55ZM6.45 7.9a1.71 1.71 0 1 1 0-3.42 1.71 1.71 0 0 1 0 3.42Zm12.3 10.85H15.8V14.1c0-1.11-.02-2.54-1.55-2.54-1.55 0-1.79 1.21-1.79 2.46v4.73H9.5V9.2h2.84v1.3h.04c.4-.75 1.36-1.55 2.8-1.55 2.99 0 3.56 1.97 3.56 4.53v5.27Z"/></svg></a>
       <a class="social" href="mailto:theo.jeanmart@gmail.com" aria-label="Send an email"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5.5A2.5 2.5 0 0 1 4.5 3h15A2.5 2.5 0 0 1 22 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 18.5v-13Zm2.1-.3 7.18 6.1a1.1 1.1 0 0 0 1.44 0l7.18-6.1H4.1Zm15.7 3-5.78 4.9a3.1 3.1 0 0 1-4.04 0L4.2 8.2v10.3c0 .17.13.3.3.3h15c.17 0 .3-.13.3-.3V8.2Z"/></svg></a>
     </div>
