@@ -2,7 +2,6 @@ const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
 const stage = document.getElementById('stage');
 const figures = [...document.querySelectorAll('.side-figure')];
 const interests = [...document.querySelectorAll('.interest')];
-const interestSection = document.getElementById('interests');
 const dialogTriggers = [...document.querySelectorAll('[data-dialog]')];
 
 function placeFigures() {
@@ -32,7 +31,7 @@ function updateScrollMotion() {
         rotation = progress * 22;
         break;
       case 'arm':
-        figure.style.setProperty('--gripper-roll', (progress * 45) + 'deg');
+        figure.style.setProperty('--wrist-turn', (progress * 13) + 'deg');
         break;
       case 'formula':
         x = -progress * 34;
@@ -84,30 +83,6 @@ function queueScrollMotion() {
 for (const item of interests) {
   item.addEventListener('toggle', () => {
     if (item.open) interests.forEach(other => { if (other !== item) other.open = false; });
-  });
-}
-
-if (interestSection && !motionPreference.matches) {
-  interestSection.addEventListener('pointermove', event => {
-    if (event.pointerType === 'touch') return;
-    const bounds = interestSection.getBoundingClientRect();
-    const x = (event.clientX - bounds.left) / bounds.width - 0.5;
-    const y = (event.clientY - bounds.top) / bounds.height - 0.5;
-    for (const item of interests) {
-      const factor = Number(item.dataset.follow || 1);
-      const image = item.querySelector('img');
-      image.style.setProperty('--follow-x', (x * 22 * factor).toFixed(1) + 'px');
-      image.style.setProperty('--follow-y', (y * 18 * factor).toFixed(1) + 'px');
-      image.style.setProperty('--follow-r', (x * 6 * factor).toFixed(1) + 'deg');
-    }
-  });
-  interestSection.addEventListener('pointerleave', () => {
-    for (const item of interests) {
-      const image = item.querySelector('img');
-      image.style.setProperty('--follow-x', '0px');
-      image.style.setProperty('--follow-y', '0px');
-      image.style.setProperty('--follow-r', '0deg');
-    }
   });
 }
 

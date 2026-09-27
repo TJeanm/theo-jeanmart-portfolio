@@ -34,15 +34,14 @@ a{color:inherit}
 .side-figure{position:absolute;width:clamp(145px,14vw,225px);transform:translate3d(var(--move-x,0px),var(--move-y,0px),0) rotate(var(--turn,0deg));transform-origin:center;will-change:transform;opacity:.78}
 .side-figure--left{left:0}.side-figure--right{right:0}
 .side-figure img,.side-figure canvas{display:block;width:100%;height:auto}
-.side-figure--cloud{width:clamp(260px,24vw,320px);left:-20px;opacity:1;filter:contrast(1.5)}
+.side-figure--cloud{width:clamp(400px,35vw,460px);left:-215px;opacity:1;filter:contrast(1.5);mask-image:linear-gradient(90deg,#000 0%,#000 76%,transparent 100%)}
 .side-figure--formula{width:clamp(180px,18vw,280px)}
 .side-figure--arm{width:clamp(150px,15vw,230px);right:45px}
 .side-figure--drone{width:clamp(165px,16vw,240px)}
 .side-figure--cloud{transform:translate3d(0,0,0) rotate(var(--turn,0deg))}
 .cobot-assembly,.drone-assembly{position:relative;width:100%}
-.cobot-assembly{perspective:700px}
 .cobot-body,.drone-body{width:100%;display:block}
-.cobot-gripper{position:absolute!important;width:30%!important;left:88%;top:31%;transform:rotate3d(.72,.7,0,var(--gripper-roll,0deg));transform-origin:17% 23%;backface-visibility:visible}
+.cobot-gripper{position:absolute!important;width:35%!important;left:87%;top:30%;transform:rotate(var(--wrist-turn,0deg));transform-origin:17% 23%;transition:transform .15s ease-out;will-change:transform}
 .drone-rotor{position:absolute!important;width:24%!important;transform:rotate(var(--rotor-turn,0deg));transform-origin:center}
 .drone-rotor--one{left:21%;top:4%}
 .drone-rotor--two{left:81%;top:18%;transform:rotate(var(--rotor-turn-reverse,0deg))}
@@ -62,18 +61,26 @@ a{color:inherit}
 .experience-item>p:not(.eyebrow):not(.organisation):not(.location){margin:0 0 14px;color:var(--ink-soft)}
 .prompt-list{list-style:none;margin:0;padding:0;color:var(--ink-soft);font-size:14px}
 .prompt-list li{margin:3px 0}
-.prompt-list li::before{content:"$ ";color:var(--ink);font-weight:700}
+.prompt-list li::before{content:"- ";color:var(--ink);font-weight:700}
 .skills{padding-top:100px}
-.skill-groups{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 18px;align-items:center}
-.skill-blob{min-height:170px;padding:22px 24px;border-radius:50%;background:rgba(255,255,255,.17);border:1px solid rgba(36,47,53,.27);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;opacity:.91;animation:skill-float 6s ease-in-out infinite;transition:transform .25s ease,background .25s ease,border-color .25s ease,opacity .25s ease,filter .25s ease,box-shadow .25s ease}
+.skill-groups{position:relative;height:520px}
+.skill-blob{position:absolute;min-height:170px;padding:22px 24px;border-radius:50%;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 30% 20%,rgba(255,255,255,.38),rgba(255,255,255,.14) 50%,rgba(71,84,91,.08));border:1px solid rgba(36,47,53,.27);box-shadow:inset 3px 5px 10px rgba(255,255,255,.38),inset -9px -12px 18px rgba(36,47,53,.04);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;opacity:.91;animation:skill-float 6s ease-in-out infinite;transition:transform .25s ease,background .25s ease,border-color .25s ease,opacity .25s ease,filter .25s ease,box-shadow .25s ease}
+.skill-blob::before{content:"";position:absolute;top:9%;left:16%;width:42%;height:27%;border-radius:50%;background:radial-gradient(ellipse at 35% 30%,rgba(255,255,255,.72),rgba(255,255,255,.17) 52%,transparent 75%);filter:blur(5px);pointer-events:none}
+.skill-blob>*{position:relative;z-index:1}
+.skill-blob--simulation{width:245px;top:45px;left:5px}
+.skill-blob--computing{width:235px;top:0;left:270px}
+.skill-blob--robotics{width:248px;top:70px;right:0}
+.skill-blob--libraries{width:230px;top:330px;left:42px}
+.skill-blob--languages{width:215px;top:245px;left:300px}
+.skill-blob--soft{width:230px;top:310px;right:5px}
 .skill-blob:nth-child(2){animation-duration:7.1s;animation-delay:-1.6s}
 .skill-blob:nth-child(3){animation-duration:6.7s;animation-delay:-3.1s}
 .skill-blob:nth-child(4){animation-duration:7.6s;animation-delay:-2.4s}
 .skill-blob:nth-child(5){animation-duration:6.4s;animation-delay:-4.2s}
 .skill-blob:nth-child(6){animation-duration:7.3s;animation-delay:-.9s}
-@keyframes skill-float{0%,100%{translate:0 0}50%{translate:0 -8px}}
+@keyframes skill-float{0%,100%{translate:0 0}25%{translate:4px -10px}50%{translate:-3px -19px}75%{translate:2px -7px}}
 @media(hover:hover){
-  .skill-blob:hover{animation-play-state:paused;transform:scale(1.04);opacity:1;background:rgba(255,255,255,.32);border-color:rgba(36,47,53,.48);box-shadow:0 12px 28px rgba(36,47,53,.07)}
+  .skill-blob:hover{animation-play-state:paused;transform:scale(1.04);opacity:1;background:radial-gradient(ellipse at 30% 20%,rgba(255,255,255,.65),rgba(255,255,255,.25) 50%,rgba(71,84,91,.1));border-color:rgba(36,47,53,.48);box-shadow:0 12px 28px rgba(36,47,53,.07)}
   .skill-groups:has(.skill-blob:hover) .skill-blob:not(:hover){opacity:.84;filter:contrast(.94)}
 }
 .skill-blob h3{font-size:18px;margin:0 0 7px;letter-spacing:-.025em}
@@ -94,13 +101,17 @@ a{color:inherit}
 .diagram{display:flex;align-items:center;gap:7px;margin-top:28px;max-width:100%;overflow-x:auto;padding:4px 0 12px}
 .diagram span{display:flex;align-items:center;justify-content:center;text-align:center;min-width:125px;min-height:68px;padding:10px;border:1px solid var(--rule);font-size:12px;line-height:1.35;background:rgba(255,255,255,.16)}
 .diagram i{font-style:normal;color:var(--muted);font-size:19px}
+.failures{padding-top:105px}
+.failure-list{border-top:1px solid var(--rule)}
+.failure-item{display:grid;grid-template-columns:80px 1fr;gap:30px;border-bottom:1px solid var(--rule);padding:22px 0;margin:0;color:var(--ink-soft);font-size:15px;line-height:1.75}
+.failure-year{color:var(--muted);font-size:14px}
 .interests{padding-top:110px;padding-bottom:150px}
 .interest-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .interest{border:1px solid rgba(36,47,53,.18);background:rgba(255,255,255,.12);min-width:0;transition:background .2s}
 .interest:hover,.interest[open]{background:rgba(255,255,255,.3)}
 .interest summary{list-style:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:9px;min-height:202px;padding:18px 14px 17px}
 .interest summary::-webkit-details-marker{display:none}
-.interest summary img{width:125px;height:125px;object-fit:contain;transform:translate3d(var(--follow-x,0px),var(--follow-y,0px),0) rotate(var(--follow-r,0deg));transition:transform .22s ease-out;will-change:transform}
+.interest summary img{width:125px;height:125px;object-fit:contain}
 .interest summary span{font-size:14px;font-weight:600;text-align:center}
 .interest p{font-size:12px;color:var(--ink-soft);margin:0;padding:0 18px 18px;text-align:center}
 .experience-dialog{width:min(760px,calc(100% - 32px));max-height:min(88vh,900px);padding:0;border:1px solid var(--rule);background:#e3e6e8;color:var(--ink);box-shadow:0 24px 80px rgba(22,32,38,.22)}
@@ -122,6 +133,10 @@ a{color:inherit}
 .social:hover{opacity:.7;transform:translateY(-2px)}
 .footer p{color:#aeb7bc;font-size:11px;margin:45px 0 0}
 @media(max-width:1120px){.margin-art{display:none}}
+@media(max-width:900px){
+  .skill-groups{height:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+  .skill-blob{position:relative;inset:auto;width:100%;min-height:170px}
+}
 @media(max-width:700px){
   .content{width:calc(100% - 40px)}
   .hero{min-height:78svh}
@@ -132,13 +147,14 @@ a{color:inherit}
   .experience-list{gap:18px}
   .experience-item{padding-left:18px}
   .experience-item .organisation{font-size:15px}
-  .skill-groups{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  .skill-groups{gap:14px}
   .skill-blob{min-height:165px;padding:20px 14px}
   .skill-blob h3{font-size:16px}
   .skill-blob p{font-size:11px}
   .section-note{margin:-26px 0 28px}
   .project-list{gap:18px}
   .project-item{padding-left:18px}
+  .failure-item{grid-template-columns:1fr;gap:4px;padding:18px 0;font-size:14px}
   .interest-grid{grid-template-columns:repeat(2,1fr);gap:10px}
   .interest summary{min-height:180px}
   .interest summary img{width:105px;height:105px}
