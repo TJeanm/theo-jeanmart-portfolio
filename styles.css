@@ -31,14 +31,13 @@ a{color:inherit}
 .section-title>span{margin-right:.18em}
 .section-note{color:var(--muted);font-size:14px;margin:-38px 0 44px}
 .margin-art{position:absolute;inset:0;width:min(1380px,calc(100% - 44px));margin:auto;z-index:1;pointer-events:none}
-.side-figure{position:absolute;width:clamp(145px,14vw,225px);transform:translate3d(var(--move-x,0px),var(--move-y,0px),0) rotate(var(--turn,0deg));transform-origin:center;will-change:transform;opacity:.78}
+.side-figure{position:absolute;width:clamp(145px,14vw,225px);transform:translate3d(var(--move-x,0px),var(--move-y,0px),0);transform-origin:center;will-change:transform;opacity:.78}
 .side-figure--left{left:0}.side-figure--right{right:0}
 .side-figure img,.side-figure canvas{display:block;width:100%;height:auto}
 .side-figure--cloud{width:clamp(400px,35vw,460px);left:-215px;opacity:1;filter:contrast(1.5);mask-image:linear-gradient(90deg,#000 0%,#000 76%,transparent 100%)}
 .side-figure--formula{width:clamp(180px,18vw,280px)}
 .side-figure--arm{width:clamp(150px,15vw,230px);right:45px}
 .side-figure--drone{width:clamp(165px,16vw,240px)}
-.side-figure--cloud{transform:translate3d(0,0,0) rotate(var(--turn,0deg))}
 .cobot-assembly,.drone-assembly{position:relative;width:100%}
 .cobot-body,.drone-body{width:100%;display:block}
 .cobot-gripper{position:absolute!important;width:35%!important;left:87%;top:30%;transform:rotate(var(--wrist-turn,0deg));transform-origin:17% 23%;transition:transform .15s ease-out;will-change:transform}
@@ -107,8 +106,8 @@ a{color:inherit}
 .failure-year{color:var(--muted);font-size:14px}
 .interests{padding-top:110px;padding-bottom:150px}
 .interest-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.interest{border:1px solid rgba(36,47,53,.18);background:rgba(255,255,255,.12);min-width:0;transition:background .2s}
-.interest:hover,.interest[open]{background:rgba(255,255,255,.3)}
+.interest{border:1px solid rgba(36,47,53,.18);background:rgba(255,255,255,.12);min-width:0;transition:background .2s,transform .2s,box-shadow .2s}
+@media(hover:hover){.interest:hover{background:rgba(255,255,255,.3);transform:scale(1.025);box-shadow:0 8px 24px rgba(36,47,53,.08)}}
 .interest summary{list-style:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:9px;min-height:202px;padding:18px 14px 17px}
 .interest summary::-webkit-details-marker{display:none}
 .interest summary img{width:125px;height:125px;object-fit:contain}
@@ -173,5 +172,5 @@ a{color:inherit}
 }
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  .side-figure,.interest summary img,.experience-item,.project-item,.social,.cobot-gripper,.drone-rotor,.skill-blob{transition:none!important;transform:none!important;animation:none!important;translate:none!important}
+  .side-figure,.interest,.interest summary img,.experience-item,.project-item,.social,.cobot-gripper,.drone-rotor,.skill-blob{transition:none!important;transform:none!important;animation:none!important;translate:none!important}
 }

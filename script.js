@@ -25,13 +25,14 @@ function updateScrollMotion() {
     if (!anchor) continue;
     const topInViewport = anchor.getBoundingClientRect().top + Number(figure.dataset.offset || 0);
     const progress = Math.max(-1.4, Math.min(1.4, (viewportMiddle - topInViewport) / window.innerHeight));
-    let x = 0, y = 0, rotation = 0;
+    let x = 0, y = 0;
     switch (figure.dataset.motion) {
       case 'cloud':
-        rotation = progress * 22;
+        x = progress * 18;
+        y = progress * -8;
         break;
       case 'arm':
-        figure.style.setProperty('--wrist-turn', (progress * 13) + 'deg');
+        figure.style.setProperty('--wrist-turn', Math.max(-22, Math.min(22, progress * 23)) + 'deg');
         break;
       case 'formula':
         x = -progress * 34;
@@ -46,7 +47,6 @@ function updateScrollMotion() {
     }
     figure.style.setProperty('--move-x', x + 'px');
     figure.style.setProperty('--move-y', y + 'px');
-    figure.style.setProperty('--turn', rotation + 'deg');
   }
 }
 
