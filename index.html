@@ -87,6 +87,12 @@
             <h3>Formula Student path planning</h3>
             <p class="project-teaser">A planning pipeline that turns track and cone data into a drivable trajectory.</p>
           </article>
+          <article class="project-item" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Read more about Division Drone, 1st Place at the French Gendarmerie Hackathon" data-dialog="project-division-drone">
+            <p class="eyebrow">October 2026 · <span class="project-distinction">1st Place · French Gendarmerie Hackathon</span></p>
+            <h3>Division Drone</h3>
+            <p class="project-teaser">Interactive geospatial platform for multi-drone mission planning, coverage optimisation and dynamic coordination. Live demo available.</p>
+            <p class="project-tags">React · TypeScript · Leaflet · Geospatial Data</p>
+          </article>
           <article class="project-item" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Read more about Industry 4.0 robotic integration" data-dialog="project-industry">
             <p class="eyebrow">UPSSITECH · 2026–</p>
             <h3>Industry 4.0 robotic integration</h3>
@@ -199,10 +205,31 @@
     </div>
   </dialog>
 
+  <dialog class="experience-dialog project-dialog" id="project-division-drone" aria-labelledby="project-division-drone-title">
+    <div class="dialog-page">
+      <button class="dialog-close" type="button" aria-label="Close project details">×</button>
+      <p class="dialog-kicker">Project / 03 · October 2026</p>
+      <h2 id="project-division-drone-title">Division Drone</h2>
+      <div class="project-report">
+        <p class="report-kicker">1st Place · French Gendarmerie Hackathon</p>
+        <h3>Planning and coordinating multi-drone missions</h3>
+        <p>Built by the UPSSITECH team for the French Gendarmerie Hackathon, where it won 1st place against teams from INSA, ENSEEIHT and ENAC. Division Drone is a decision-support prototype for planning and simulating multi-drone operations over geographic areas.</p>
+        <p>The planning system proposes drone positions to increase coverage of operational and priority zones while limiting unnecessary overlap and accounting for available resources and flight constraints. During a simulated mission, operators can reposition drones and pilots, recompute coverage, detect altitude conflicts, handle unavailable resources, and simulate emergency or return-to-home procedures.</p>
+        <p>The React, TypeScript and Leaflet interface uses OpenStreetMap and IGN maps, weather data, mission import/export, and light/dark operational dashboards. The application is in French for its intended French Gendarmerie audience.</p>
+        <p class="diagram-label">Conceptual workflow</p>
+        <div class="diagram" role="img" aria-label="Conceptual workflow: geographic and priority zones inform drone placement and coverage, followed by mission coordination and alerts."><span>Geographic +<br>priority zones</span><i aria-hidden="true">→</i><span>Drone placement<br>+ coverage</span><i aria-hidden="true">→</i><span>Mission coordination<br>+ alerts</span></div>
+        <div class="project-actions">
+          <a class="project-action project-action--primary" href="https://drone-planning.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo <span aria-hidden="true">↗</span></a>
+          <a class="project-action" href="https://github.com/TJeanm/hackathon-gendarmerie-drones" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
   <dialog class="experience-dialog project-dialog" id="project-industry" aria-labelledby="project-industry-title">
     <div class="dialog-page">
       <button class="dialog-close" type="button" aria-label="Close project details">×</button>
-      <p class="dialog-kicker">Project / 03</p>
+      <p class="dialog-kicker">Project / 04</p>
       <h2 id="project-industry-title">Industry 4.0 robotic integration</h2>
       <div class="project-report">
               <p class="report-kicker">Final-year engineering project</p>
@@ -217,7 +244,7 @@
   <dialog class="experience-dialog project-dialog" id="project-platform" aria-labelledby="project-platform-title">
     <div class="dialog-page">
       <button class="dialog-close" type="button" aria-label="Close project details">×</button>
-      <p class="dialog-kicker">Project / 04</p>
+      <p class="dialog-kicker">Project / 05</p>
       <h2 id="project-platform-title">Autonomous mobile platform</h2>
       <div class="project-report">
               <p class="report-kicker">From components to a working robot</p>

@@ -94,6 +94,7 @@ a{color:inherit}
 .project-item .eyebrow{color:var(--muted);font-size:14px;margin:0 0 10px}
 .project-item h3{font-size:clamp(20px,2.3vw,29px);line-height:1.3;letter-spacing:-.035em;margin:0 0 12px}
 .project-teaser{color:var(--ink-soft);margin:0}
+.project-distinction{color:var(--ink);font-weight:600}
 .project-item--link{display:block;text-decoration:none}
 .project-tags{color:var(--muted);font-size:12px;margin:11px 0 0}
 .project-dialog .project-report{margin:32px 0 0;padding:0;border:0}
@@ -104,6 +105,10 @@ a{color:inherit}
 .diagram{display:flex;align-items:center;gap:7px;margin-top:28px;max-width:100%;overflow-x:auto;padding:4px 0 12px}
 .diagram span{display:flex;align-items:center;justify-content:center;text-align:center;min-width:125px;min-height:68px;padding:10px;border:1px solid var(--rule);font-size:12px;line-height:1.35;background:rgba(255,255,255,.16)}
 .diagram i{font-style:normal;color:var(--muted);font-size:19px}
+.project-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.project-action{display:inline-flex;align-items:center;gap:12px;padding:8px 13px;border:1px solid var(--rule);background:rgba(255,255,255,.16);color:var(--ink-soft);font-size:13px;text-decoration:none;transition:background .2s,border-color .2s}
+.project-action--primary{border-color:var(--ink);color:var(--ink);font-weight:700}
+.project-action:hover{background:rgba(255,255,255,.42);border-color:var(--ink)}
 .failures{padding-top:105px}
 .failure-list{border-top:1px solid var(--rule)}
 .failure-item{display:grid;grid-template-columns:80px 1fr;gap:30px;border-bottom:1px solid var(--rule);padding:22px 0;margin:0;color:var(--ink-soft);font-size:15px;line-height:1.75}
